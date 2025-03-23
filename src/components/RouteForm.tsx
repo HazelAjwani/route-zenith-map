@@ -47,10 +47,10 @@ const RouteForm = ({ onSubmit }: RouteFormProps) => {
   return (
     <form 
       onSubmit={handleSubmit}
-      className="w-full max-w-md mx-auto animate-in-up bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg"
+      className="w-full max-w-md mx-auto bg-white border-2 border-gray-300 dark:border-gray-600 dark:bg-gray-800 p-6 rounded-xl shadow-lg"
     >
       <div className="space-y-4">
-        <div className="space-y-2 stagger-1 animate-in-up">
+        <div className="space-y-2">
           <label 
             htmlFor="origin" 
             className="block text-sm font-medium text-gray-700 dark:text-gray-300"
@@ -59,9 +59,9 @@ const RouteForm = ({ onSubmit }: RouteFormProps) => {
           </label>
           <div className={cn(
             "relative rounded-xl transition-all duration-200",
-            focusedField === 'origin' ? "ring-2 ring-primary/20" : ""
+            focusedField === 'origin' ? "ring-2 ring-primary/50" : ""
           )}>
-            <div className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">
+            <div className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 dark:text-gray-400">
               <MapPin size={18} />
             </div>
             <input
@@ -73,12 +73,12 @@ const RouteForm = ({ onSubmit }: RouteFormProps) => {
               onFocus={() => setFocusedField('origin')}
               onBlur={() => setFocusedField(null)}
               placeholder="Enter starting point"
-              className="w-full pl-10 pr-4 py-3 bg-gray-100 dark:bg-gray-700 dark:text-white rounded-xl border border-gray-300 dark:border-gray-600 outline-none focus:ring-2 focus:ring-primary"
+              className="w-full pl-10 pr-4 py-3 bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white rounded-xl border-2 border-gray-300 dark:border-gray-600 outline-none focus:ring-2 focus:ring-primary"
             />
           </div>
         </div>
 
-        <div className="space-y-2 stagger-2 animate-in-up">
+        <div className="space-y-2">
           <label 
             htmlFor="destination" 
             className="block text-sm font-medium text-gray-700 dark:text-gray-300"
@@ -87,9 +87,9 @@ const RouteForm = ({ onSubmit }: RouteFormProps) => {
           </label>
           <div className={cn(
             "relative rounded-xl transition-all duration-200",
-            focusedField === 'destination' ? "ring-2 ring-primary/20" : ""
+            focusedField === 'destination' ? "ring-2 ring-primary/50" : ""
           )}>
-            <div className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">
+            <div className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 dark:text-gray-400">
               <MapPin size={18} />
             </div>
             <input
@@ -101,13 +101,13 @@ const RouteForm = ({ onSubmit }: RouteFormProps) => {
               onFocus={() => setFocusedField('destination')}
               onBlur={() => setFocusedField(null)}
               placeholder="Enter destination"
-              className="w-full pl-10 pr-4 py-3 bg-gray-100 dark:bg-gray-700 dark:text-white rounded-xl border border-gray-300 dark:border-gray-600 outline-none focus:ring-2 focus:ring-primary"
+              className="w-full pl-10 pr-4 py-3 bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white rounded-xl border-2 border-gray-300 dark:border-gray-600 outline-none focus:ring-2 focus:ring-primary"
             />
           </div>
         </div>
 
         <div className="grid grid-cols-2 gap-4">
-          <div className="space-y-2 stagger-3 animate-in-up">
+          <div className="space-y-2">
             <label 
               htmlFor="vehicleType" 
               className="block text-sm font-medium text-gray-700 dark:text-gray-300"
@@ -115,7 +115,7 @@ const RouteForm = ({ onSubmit }: RouteFormProps) => {
               Vehicle Type
             </label>
             <div className="relative">
-              <div className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">
+              <div className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 dark:text-gray-400">
                 <Car size={18} />
               </div>
               <select
@@ -123,19 +123,19 @@ const RouteForm = ({ onSubmit }: RouteFormProps) => {
                 name="vehicleType"
                 value={formData.vehicleType}
                 onChange={handleChange}
-                className="w-full appearance-none pl-10 pr-10 py-3 bg-gray-100 dark:bg-gray-700 dark:text-white rounded-xl border border-gray-300 dark:border-gray-600 outline-none focus:ring-2 focus:ring-primary"
+                className="w-full appearance-none pl-10 pr-10 py-3 bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white rounded-xl border-2 border-gray-300 dark:border-gray-600 outline-none focus:ring-2 focus:ring-primary"
               >
                 <option value="Car">Car</option>
                 <option value="Truck">Truck</option>
                 <option value="Bike">Bike</option>
               </select>
-              <div className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none">
+              <div className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 dark:text-gray-400 pointer-events-none">
                 <ChevronDown size={18} />
               </div>
             </div>
           </div>
 
-          <div className="space-y-2 stagger-3 animate-in-up">
+          <div className="space-y-2">
             <label 
               htmlFor="fuelType" 
               className="block text-sm font-medium text-gray-700 dark:text-gray-300"
@@ -143,7 +143,7 @@ const RouteForm = ({ onSubmit }: RouteFormProps) => {
               Fuel Type
             </label>
             <div className="relative">
-              <div className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">
+              <div className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 dark:text-gray-400">
                 <Zap size={18} />
               </div>
               <select
@@ -151,20 +151,20 @@ const RouteForm = ({ onSubmit }: RouteFormProps) => {
                 name="fuelType"
                 value={formData.fuelType}
                 onChange={handleChange}
-                className="w-full appearance-none pl-10 pr-10 py-3 bg-gray-100 dark:bg-gray-700 dark:text-white rounded-xl border border-gray-300 dark:border-gray-600 outline-none focus:ring-2 focus:ring-primary"
+                className="w-full appearance-none pl-10 pr-10 py-3 bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white rounded-xl border-2 border-gray-300 dark:border-gray-600 outline-none focus:ring-2 focus:ring-primary"
               >
                 <option value="Petrol">Petrol</option>
                 <option value="Diesel">Diesel</option>
                 <option value="Electric">Electric</option>
               </select>
-              <div className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none">
+              <div className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 dark:text-gray-400 pointer-events-none">
                 <ChevronDown size={18} />
               </div>
             </div>
           </div>
         </div>
 
-        <div className="space-y-2 stagger-4 animate-in-up">
+        <div className="space-y-2">
           <label 
             htmlFor="routePreference" 
             className="block text-sm font-medium text-gray-700 dark:text-gray-300"
@@ -172,7 +172,7 @@ const RouteForm = ({ onSubmit }: RouteFormProps) => {
             Route Preference
           </label>
           <div className="relative">
-            <div className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">
+            <div className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 dark:text-gray-400">
               <Leaf size={18} />
             </div>
             <select
@@ -180,12 +180,12 @@ const RouteForm = ({ onSubmit }: RouteFormProps) => {
               name="routePreference"
               value={formData.routePreference}
               onChange={handleChange}
-              className="w-full appearance-none pl-10 pr-10 py-3 bg-gray-100 dark:bg-gray-700 dark:text-white rounded-xl border border-gray-300 dark:border-gray-600 outline-none focus:ring-2 focus:ring-primary"
+              className="w-full appearance-none pl-10 pr-10 py-3 bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white rounded-xl border-2 border-gray-300 dark:border-gray-600 outline-none focus:ring-2 focus:ring-primary"
             >
               <option value="Fastest">Fastest</option>
               <option value="Greenest">Greenest</option>
             </select>
-            <div className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none">
+            <div className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 dark:text-gray-400 pointer-events-none">
               <ChevronDown size={18} />
             </div>
           </div>
@@ -194,7 +194,7 @@ const RouteForm = ({ onSubmit }: RouteFormProps) => {
         <button
           type="submit"
           className="w-full mt-6 py-3 px-4 bg-primary text-white rounded-xl font-medium transition-all 
-                   hover:bg-primary/90 active:scale-[0.98] stagger-5 animate-in-up
+                   hover:bg-primary/90 active:scale-[0.98]
                    shadow-lg shadow-primary/20"
         >
           Get Route
